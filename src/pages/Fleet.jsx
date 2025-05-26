@@ -43,11 +43,11 @@ const Fleet = () => {
             Car Fleets
           </h1>
         </div>
-          <input
-            type="text"
-            placeholder="search"
-            className="bg-white w-350 h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25"
-          />
+        <input
+          type="text"
+          placeholder="search"
+          className="bg-white h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25 w-[300px] max-w-300 sm:w-full"
+        />
       </div>
       <div className="p-6 bg-white shadow-md">
         <div className="flex flex-wrap gap-4 mb-6">
