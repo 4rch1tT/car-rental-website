@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Heart, HeartOff } from "lucide-react";
+import { toggleWishlist } from "../features/wishlist/wishlistSlice";
 
 const CarCard = ({ car }) => {
-  const [wishlisted, setWishlisted] = useState(false);
+  const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist);
+  const isWishlisted = wishlist.includes(car.id);
 
-  const toggleWishlist = () => {
-    setWishlisted((prev) => !prev);
+  const handleToggleWishlist = () => {
+    dispatch(toggleWishlist(car.id));
   };
 
   return (
@@ -18,24 +21,27 @@ const CarCard = ({ car }) => {
           className="w-full h-48 object-cover"
         />
         <button
-          onClick={toggleWishlist}
+          onClick={handleToggleWishlist}
           className="absolute top-2 right-2 text-xl"
           title="Toggle Wishlist"
         >
-          {wishlisted ? (
-            <Heart className="text-red-500" fill="currentColor" />
+          {isWishlisted ? (
+            <Heart className="text-red" fill="currentColor" />
           ) : (
-            <HeartOff className="text-gray-500" />
+            <HeartOff className="text-gray" />
           )}
         </button>
       </figure>
 
       <div className="card-body">
-        <h2 className="card-title">{car.name}</h2>
-        <p className="text-sm text-gray-500">
+        <h2 className="card-title text-midnight">{car.name}</h2>
+        <p className="text-sm text-gray">
           {car.brand} - {car.category}
         </p>
-        <p className="font-semibold text-blue-600">${car.pricePerDay}/day</p>
+        <p className="font-semibold text-xl text-blue">
+          ${car.pricePerDay}
+          <span className="text-gray text-sm font-normal">/day</span>
+        </p>
 
         <div className="card-actions justify-end mt-4">
           <Link to={`/booking/${car.id}`}>
@@ -48,3 +54,4 @@ const CarCard = ({ car }) => {
 };
 
 export default CarCard;
+

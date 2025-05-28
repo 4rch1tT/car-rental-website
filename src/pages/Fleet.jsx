@@ -9,6 +9,7 @@ const Fleet = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [maxPrice, setMaxPrice] = useState("");
   const [sortBy, setSortBy] = useState("popularity");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     let filtered = carsData;
@@ -21,6 +22,12 @@ const Fleet = () => {
       filtered = filtered.filter((car) => car.pricePerDay <= Number(maxPrice));
     }
 
+    if (searchTerm.trim() !== "") {
+      filtered = filtered.filter((car) =>
+        car.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
     if (sortBy === "popularity") {
       filtered = filtered.sort((a, b) => b.popularity - a.popularity);
     } else if (sortBy === "price") {
@@ -28,7 +35,7 @@ const Fleet = () => {
     }
 
     setCars(filtered);
-  }, [selectedCategory, maxPrice, sortBy]);
+  }, [selectedCategory, maxPrice, sortBy, searchTerm]);
 
   return (
     <div className="bg-white">
@@ -46,6 +53,8 @@ const Fleet = () => {
         <input
           type="text"
           placeholder="search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           className="bg-white h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25 w-[300px] max-w-300 sm:w-full"
         />
       </div>
