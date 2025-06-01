@@ -46,17 +46,29 @@ const Fleet = () => {
         }}
       >
         <div className="max-w-md text-center items-center">
-          <h1 className="mb-2 mt-5 text-4xl text-white font-bold">
+          <h1 className="mb-2 mt-5 font-libre-baskerville text-4xl text-white font-bold">
             Car Fleets
           </h1>
         </div>
-        <input
-          type="text"
-          placeholder="search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-white h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25 w-[300px] max-w-300 sm:w-full"
-        />
+        <label className="input bg-white h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25 w-[300px] max-w-300 sm:w-full">
+          <svg
+            className="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input type="search" required placeholder="Search" />
+        </label>
       </div>
       <div className="p-6 bg-white shadow-md">
         <div className="flex flex-wrap gap-4 mb-6">
@@ -65,7 +77,9 @@ const Fleet = () => {
             onChange={(e) => setSelectedCategory(e.target.value)}
             className="select select-bordered max-w-xs bg-white text-midnight rounded-3xl border-midnight"
           >
-            <option value="All">All Categories</option>
+            <option value="All" className="font-poppins">
+              All Categories
+            </option>
             {categories.map((cat) => (
               <option key={cat} value={cat}>
                 {cat}
@@ -87,8 +101,12 @@ const Fleet = () => {
             onChange={(e) => setSortBy(e.target.value)}
             className="select select-bordered max-w-xs bg-white text-midnight rounded-3xl border-midnight"
           >
-            <option value="popularity">Sort by Popularity</option>
-            <option value="price">Sort by Price</option>
+            <option value="popularity" className="font-poppins">
+              Sort by Popularity
+            </option>
+            <option value="price" className="font-poppins">
+              Sort by Price
+            </option>
           </select>
         </div>
 
@@ -96,7 +114,7 @@ const Fleet = () => {
           {cars.length > 0 ? (
             cars.map((car) => <CarCard key={car.id} car={car} />)
           ) : (
-            <p>No cars found matching the criteria.</p>
+            <p className="font-poppins">No cars found matching the criteria.</p>
           )}
         </div>
       </div>

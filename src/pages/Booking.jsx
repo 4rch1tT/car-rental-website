@@ -34,10 +34,8 @@ const Booking = () => {
 
   return (
     <div className="bg-white min-h-screen p-6 ">
-      <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-midnight">
-        <h1 className="text-2xl text-midnight font-bold mb-4">
-          Book {car.name}
-        </h1>
+      <div className="max-w-3xl mx-auto p-6 bg-white shadow-xl rounded-lg">
+        <h1 className="text-2xl text-midnight font-bold mb-4">{car.name}</h1>
 
         <img
           src={car.image}

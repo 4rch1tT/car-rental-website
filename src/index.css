@@ -1,7 +1,21 @@
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/fonts/LibreBaskerville-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
 @import "tailwindcss";
 @plugin "daisyui";
 
 @theme {
+  --font-libre-baskerville: "Libre Baskerville", serif;
+  --font-poppins: "Poppins", sans-serif;
   --color-*: initial;
   --color-white: #fff;
   --color-blue: #4f46e5;

@@ -34,18 +34,22 @@ const CarCard = ({ car }) => {
       </figure>
 
       <div className="card-body">
-        <h2 className="card-title text-midnight">{car.name}</h2>
-        <p className="text-sm text-gray">
+        <h2 className="card-title font-libre-baskerville text-midnight">
+          {car.name}
+        </h2>
+        <p className="text-sm font-poppins text-gray">
           {car.brand} - {car.category}
         </p>
-        <p className="font-semibold text-xl text-blue">
+        <p className="font-poppins font-semibold text-xl text-blue">
           ${car.pricePerDay}
           <span className="text-gray text-sm font-normal">/day</span>
         </p>
 
         <div className="card-actions justify-end mt-4">
           <Link to={`/booking/${car.id}`}>
-            <button className="btn btn-primary rounded-3xl">Book Now</button>
+            <button className="btn font-poppins btn-primary rounded-3xl">
+              Book Now
+            </button>
           </Link>
         </div>
       </div>
@@ -54,4 +58,3 @@ const CarCard = ({ car }) => {
 };
 
 export default CarCard;
-

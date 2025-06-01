@@ -8,6 +8,7 @@ import UserRoot from "./root/UserRoot";
 import Booking from "./pages/Booking";
 import Fleet from "./pages/Fleet";
 import About from "./pages/About";
+import SignUp from "./pages/SignUp";
 import "./index.css";
 import Wishlist from "./pages/Wishlist";
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "sign-up",
+        element: <SignUp/>,
       },
       {
         path: "booking/:id",
