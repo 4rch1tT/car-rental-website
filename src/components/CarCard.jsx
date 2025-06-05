@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Heart, HeartOff } from "lucide-react";
+import { Heart} from "lucide-react";
 import { toggleWishlist } from "../features/wishlist/wishlistSlice";
 
 const CarCard = ({ car }) => {
@@ -33,7 +33,7 @@ const CarCard = ({ car }) => {
           {isWishlisted ? (
             <Heart className="text-red" fill="currentColor" />
           ) : (
-            <HeartOff
+            <Heart
               className={theme === "dark" ? "text-gray-400" : "text-gray"}
             />
           )}

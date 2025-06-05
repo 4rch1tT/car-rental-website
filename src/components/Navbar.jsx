@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { Heart } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -35,9 +36,6 @@ const Navbar = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>
-              <Link to="/wishlist">Wishlist</Link>
-            </li>
           </ul>
         </div>
         <Link
@@ -58,13 +56,13 @@ const Navbar = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
-            <Link to="/wishlist">Wishlist</Link>
-          </li>
         </ul>
       </div>
 
       <div className="navbar-end gap-2">
+        <Link to ="/wishlist">
+        <Heart className="text-2xl text-midnight" />
+        </Link>
         <ThemeToggle />
         <Link to="/sign-up">
           <button className="btn bg-primary text-white-light font-poppins rounded-3xl">
