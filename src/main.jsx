@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import store from "./app/store";
 import { Provider } from "react-redux";
+import ThemeProvider from "./components/ThemeProvider";
 import Home from "./pages/Home";
 import UserRoot from "./root/UserRoot";
 import Booking from "./pages/Booking";
@@ -48,7 +49,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </Provider>
   </StrictMode>
 );

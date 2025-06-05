@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-white text-midnight shadow-xl border border-gray">
+    <div className="navbar bg-white text-midnight  border-b-1 shadow-xl ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -13,13 +14,12 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
@@ -34,6 +34,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/wishlist">Wishlist</Link>
             </li>
           </ul>
         </div>
@@ -61,9 +64,10 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end gap-2">
+        <ThemeToggle />
         <Link to="/sign-up">
-          <button className="btn bg-primary font-poppins rounded-3xl">
+          <button className="btn bg-primary text-white-light font-poppins rounded-3xl">
             Sign Up
           </button>
         </Link>

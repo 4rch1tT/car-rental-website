@@ -46,7 +46,7 @@ const Fleet = () => {
         }}
       >
         <div className="max-w-md text-center items-center">
-          <h1 className="mb-2 mt-5 font-libre-baskerville text-4xl text-white font-bold">
+          <h1 className="mb-2 mt-10 font-libre-baskerville text-3xl text-white-light font-bold">
             Car Fleets
           </h1>
         </div>

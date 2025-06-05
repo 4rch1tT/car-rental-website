@@ -35,7 +35,9 @@ const Booking = () => {
   return (
     <div className="bg-white min-h-screen p-6 ">
       <div className="max-w-3xl mx-auto p-6 bg-white shadow-xl rounded-lg">
-        <h1 className="text-2xl text-midnight font-bold mb-4">{car.name}</h1>
+        <h1 className="text-2xl font-libre-baskerville text-midnight font-bold mb-4">
+          {car.name}
+        </h1>
 
         <img
           src={car.image}
@@ -43,10 +45,12 @@ const Booking = () => {
           className="w-full h-64 object-cover rounded-md mb-4"
         />
 
-        <p className="text-gray mb-2">{car.description}</p>
-        <p className="text-sm text-gray mb-4">{car.features.join(", ")}</p>
+        <p className="font-poppins text-gray mb-2">{car.description}</p>
+        <p className="font-poppins text-sm text-gray mb-4">
+          {car.features.join(", ")}
+        </p>
         <p
-          className={`text-sm font-semibold mb-4 ${
+          className={`font-poppins text-sm font-semibold mb-4 ${
             car.availability ? "text-green" : "text-red"
           }`}
         >
@@ -55,7 +59,9 @@ const Booking = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
           <div>
-            <label className="label text-midnight">Start Date</label>
+            <label className="label font-poppins text-midnight">
+              Start Date
+            </label>
             <input
               type="date"
               className="input input-bordered rounded-3xl w-full bg-white text-midnight border-midnight"
@@ -64,7 +70,7 @@ const Booking = () => {
             />
           </div>
           <div>
-            <label className="label text-midnight">End Date</label>
+            <label className="label font-poppins text-midnight">End Date</label>
             <input
               type="date"
               className="input input-bordered rounded-3xl w-full bg-white text-midnight border-midnight"
@@ -74,12 +80,12 @@ const Booking = () => {
           </div>
         </div>
 
-        <p className="text-lg text-midnight font-medium mb-2">
+        <p className="font-poppins text-lg text-midnight font-medium mb-2">
           Total Price: <span className="text-blue">${totalPrice}</span>
         </p>
 
         <button
-          className="btn btn-primary rounded-3xl w-full"
+          className="btn btn-primary font-poppins rounded-3xl w-full"
           disabled={
             !startDate || !endDate || !car.availability || totalPrice === 0
           }

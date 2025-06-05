@@ -6,6 +6,7 @@ import { toggleWishlist } from "../features/wishlist/wishlistSlice";
 const CarCard = ({ car }) => {
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlist);
+  const theme = useSelector((state) => state.theme.mode);
   const isWishlisted = wishlist.includes(car.id);
 
   const handleToggleWishlist = () => {
@@ -13,7 +14,11 @@ const CarCard = ({ car }) => {
   };
 
   return (
-    <div className="card w-auto bg-white text-midnight shadow-md relative hover:shadow-xl transition-shadow duration-300">
+    <div
+      className={`card w-auto shadow-md relative hover:shadow-xl transition-shadow duration-300 ${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-midnight"
+      }`}
+    >
       <figure className="relative">
         <img
           src={car.image}
@@ -28,21 +33,37 @@ const CarCard = ({ car }) => {
           {isWishlisted ? (
             <Heart className="text-red" fill="currentColor" />
           ) : (
-            <HeartOff className="text-gray" />
+            <HeartOff
+              className={theme === "dark" ? "text-gray-400" : "text-gray"}
+            />
           )}
         </button>
       </figure>
 
       <div className="card-body">
-        <h2 className="card-title font-libre-baskerville text-midnight">
+        <h2
+          className={`card-title font-libre-baskerville ${
+            theme === "dark" ? "text-midnight" : "text-midnight"
+          }`}
+        >
           {car.name}
         </h2>
-        <p className="text-sm font-poppins text-gray">
+        <p
+          className={`text-sm font-poppins ${
+            theme === "dark" ? "text-midnight" : "text-gray"
+          }`}
+        >
           {car.brand} - {car.category}
         </p>
         <p className="font-poppins font-semibold text-xl text-blue">
           ${car.pricePerDay}
-          <span className="text-gray text-sm font-normal">/day</span>
+          <span
+            className={`text-sm font-normal ${
+              theme === "dark" ? "text-midnight" : "text-gray"
+            }`}
+          >
+            /day
+          </span>
         </p>
 
         <div className="card-actions justify-end mt-4">

@@ -3,12 +3,13 @@ import carsData from "../data/cars.json";
 import { Link } from "react-router-dom";
 import { MapPinned, Mail, Phone } from "lucide-react";
 
+
 const Home = () => {
   const [cars, setCars] = useState(carsData);
   useEffect(() => {
     let popular = cars.filter((car) => car.popularity > 80);
     setCars(popular);
-  });
+  }, [setCars]);
   return (
     <div className="bg-white">
       <div
@@ -18,10 +19,10 @@ const Home = () => {
         }}
       >
         <div className="max-w-md text-center flex flex-col justify-start items-center">
-          <h1 className="mb-2 mt-10 text-3xl text-midnight font-semibold font-libre-baskerville">
+          <h1 className="mb-2 mt-10 text-3xl text-midnight-dark font-semibold font-libre-baskerville">
             Travel on <span className="text-blue">Your Own Terms !</span>
           </h1>
-          <p className="mb-5 text-midnight font-semibold font-poppins">
+          <p className="mb-5 text-midnight-dark font-semibold font-poppins">
             Book your car online in minutes and enjoy the freedom to move
           </p>
           <Link to="/fleet">
@@ -111,24 +112,24 @@ const Home = () => {
             <h1 className="mb-5 text-5xl text-blue font-libre-baskerville font-bold">
               Contact Us
             </h1>
-            <p className="mb-5 font-poppins">
+            <p className="mb-5 text-white-light font-poppins">
               Have questions or need assistance? Reach out to us in any
               convenient way - our team is ready to help you anytime. We value
               every enquiry and will do our best to make your experience as
               smooth as possible.
             </p>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex text-white-light items-center gap-3 mb-8">
               <MapPinned />
               <span className="font-poppins">
                 Rentr 1234 Grand Avenue Suite 205, Midtown New York, NY 10001
                 United States
               </span>
             </div>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex text-white-light items-center gap-3 mb-8">
               <Mail />
               <span className="font-poppins">support@rentr.com</span>
             </div>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex text-white-light items-center gap-3 mb-8">
               <Phone />
               <span className="font-poppins">+1 (123) 456-7890</span>
             </div>
