@@ -3,7 +3,6 @@ import carsData from "../data/cars.json";
 import { Link } from "react-router-dom";
 import { MapPinned, Mail, Phone } from "lucide-react";
 
-
 const Home = () => {
   const [cars, setCars] = useState(carsData);
   useEffect(() => {
@@ -32,8 +31,8 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6  p-10">
-        <div className="bg-gray-light shadow-md rounded-lg  p-10 md:p-3 h-58 w-auto ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6  p-4">
+        <div className="bg-gray-light shadow-md rounded-lg  p-10 md:p-3 h-58 w-auto flex flex-col align-center justify-center ">
           <h3 className="text-blue text-2xl font-bold font-libre-baskerville mb-2">
             Choose Your Car
           </h3>
@@ -42,7 +41,7 @@ const Home = () => {
             the car class and your desired dates.
           </p>
         </div>
-        <div className="bg-gray-light shadow-md  rounded-lg p-10 md:p-3 h-58 w-auto">
+         <div className="bg-gray-light shadow-md rounded-lg  p-10 md:p-3 h-58 w-auto flex flex-col align-center justify-center ">
           <h3 className="text-blue text-2xl font-bold font-libre-baskerville mb-2">
             Book Online
           </h3>
@@ -52,7 +51,7 @@ const Home = () => {
             hassle-free.
           </p>
         </div>
-        <div className="bg-gray-light shadow-md  rounded-lg p-10 md:p-3 h-58 w-auto ">
+         <div className="bg-gray-light shadow-md rounded-lg  p-10 md:p-3 h-58 w-auto flex flex-col align-center justify-center ">
           <h3 className="text-blue text-2xl font-bold font-libre-baskerville mb-2">
             Travel in Comfort
           </h3>
@@ -107,7 +106,7 @@ const Home = () => {
         }}
       >
         <div className="hero-overlay"></div>
-        <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row gap-10">
+        <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row p-5 gap-10">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl text-blue font-libre-baskerville font-bold">
               Contact Us

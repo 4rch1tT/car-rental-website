@@ -50,7 +50,7 @@ const Fleet = () => {
             Car Fleets
           </h1>
         </div>
-        <label className="input bg-white h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25 w-[300px] max-w-300 sm:w-full">
+        <label className="input bg-white h-16 rounded-4xl border-midnight input input-bordered text-midnight mb-25 sm:w-150 md:w-150 lg:w-200 xl:w-300">
           <svg
             className="h-[1em] opacity-50"
             xmlns="http://www.w3.org/2000/svg"
